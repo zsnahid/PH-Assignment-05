@@ -4,6 +4,7 @@ document.getElementById('history-btn').addEventListener('click', function () {
     removeAttributeById('history', 'hidden');
     addAttributeById('history-btn', 'bg-lime');
     removeAttributeById('donation-btn', 'bg-lime');
+    const historyBtn = document.getElementById('history-btn');
 })
 
 //hide history and show donation
