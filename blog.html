@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <title>Donate Bangladesh</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lime: '#B4F461',
+                        'lime-dark': '#8FBF50',
+                    },
+                    fontFamily: {
+                        lexend: 'Lexend',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-lexend min-h-screen flex flex-col">
+    <header class="bg-orange-50 py-4 mb-12">
+        <section class="w-11/12 max-w-screen-xl mx-auto">
+            <!-- nav bar -->
+            <div class="navbar">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <a href="./index.html" id="blog-btn" class="btn bg-lime hover:bg-lime-dark">Home</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-center">
+                    <a class="btn btn-ghost text-xl">
+                        <span><img src="./assets/logo.png" alt="Logo of Donate Bangladesh"></span>
+                        Donate Bangladesh
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <img src="./assets/coin.png" alt="vector of a coin" class="mr-3">
+                    <p id="current-balance" class="text-gray-600 font-semibold mr-1">11000</p>
+                    <p class="text-gray-600 font-semibold">BDT</p>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main class="flex-grow">
+        <section class="w-11/12 max-w-screen-xl mx-auto">
+            <div class="flex mb-8">
+                <h1 class="font-bold text-3xl mr-2">Important FAQ</h1>
+                <figure>
+                    <img src="./assets/faq.png" class="w-8">
+                </figure>
+            </div>
+
+            <div class="join join-vertical w-full">
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" checked="checked" />
+                    <div class="collapse-title text-xl font-semibold">
+                        What is Document Object Model (DOM)?
+                    </div>
+                    <div class="collapse-content">
+                        <p>
+                            The DOM represents a web document with a logical tree. Each branch of the tree ends in a
+                            node and each node contains objects. DOM method allows programmatic access to the tree. As
+                            an object-oriented representation of the web page, the document's structure, style or
+                            content can be modified with a scripting language such as JavaScript.
+                        </p>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-semibold">
+                        How do you select an element from the DOM?
+                    </div>
+                    <div class="collapse-content">
+                        <p>
+                            In order to be able to manipulate an element in the DOM tree we first have to select that
+                            particular element. There are several ways to do this:
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li>getElementById()</li>
+                            <li>getElementsByClassName()</li>
+                            <li>getElementsByTagName()</li>
+                            <li>querySelector()</li>
+                            <li>querySelectorAll()</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-semibold">
+                        What is event delegation in the context of the DOM, and why is it useful?
+                    </div>
+                    <div class="collapse-content">
+                        <p>
+                            Event delegation lets us append a <b>single</b> event listener to a parent element that adds
+                            it to all of its present and future descendants that match a selector. <br> <br>
+                            Without event delegation each new child element will need their own event listener. Event
+                            delegation ensures that the parent listener will still catch events from new child elements
+                            making the code simpler, reducing memory usage and improving code maintenance.
+                        </p>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-semibold">
+                        How do you manipulate an element's attributes and styles using the DOM?
+                    </div>
+                    <div class="collapse-content">
+                        <p>
+                            To manipulate an element's attributes first we need to select the element using one of the
+                            method for selecting elements. Then using the style property we can change the styles of
+                            that element. The following example demonstrates that: <br>
+                            <b>HTML: &lt;h1 id="main-heading"&gt;This is a headline&lt;/h1&gt;</b>
+                            <br>
+                            Manipulating the element in the DOM -
+                            <br>
+                            <b>
+                                const title = document.getElementById('main-heading');
+                                <br>
+                                title.style.color = 'lightgreen';
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-32 bg-orange-50"></footer>
+
+    </footer>
+</body>
+
+</html>

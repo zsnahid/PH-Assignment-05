@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <title>Donate Bangladesh</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lime: '#B4F461',
+                        'lime-dark': '#8FBF50',
+                    },
+                    fontFamily: {
+                        lexend: 'Lexend',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-lexend min-h-screen flex flex-col">
+    <header class="bg-orange-50 bg-opacity-80 backdrop-blur sticky top-0 z-10">
+        <section class="w-11/12 max-w-screen-xl mx-auto py-4">
+            <!-- nav bar -->
+            <div class="navbar">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <a href="./blog.html" id="blog-btn" class="btn bg-lime hover:bg-lime-dark">Blog</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-center">
+                    <a class="btn btn-ghost text-xl">
+                        <span><img src="./assets/logo.png" alt="Logo of Donate Bangladesh"></span>
+                        Donate Bangladesh
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <img src="./assets/coin.png" alt="vector of a coin" class="mr-3">
+                    <p id="current-balance" class="text-gray-600 font-semibold mr-1">11000</p>
+                    <p class="text-gray-600 font-semibold">BDT</p>
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <main class="mb-12 flex-grow">
+
+        <!-- buttons under nav bar -->
+        <section class="bg-white bg-opacity-80 backdrop-blur text-center p-10 sticky top-24 z-10">
+            <button id="donation-btn" class="btn bg-lime mr-4 px-8 hover:bg-lime-dark">Donation</button>
+            <button id="history-btn" class="btn px-8 hover:bg-lime-dark">History</button>
+        </section>
+        <!-- donation cards -->
+        <section id="donation" class="w-11/12 max-w-screen-xl mx-auto space-y-10">
+            <!-- first card -->
+            <div class="card lg:card-side grid grid-cols-2 border-2 border-gray-200 p-8">
+                <figure>
+                    <img src="./assets/noakhali.png" alt="image of rescuers in Noakhali flood">
+                </figure>
+                <div class="card-body">
+                    <div class="flex items-center bg-gray-300 w-fit p-2 rounded-md">
+                        <figure>
+                            <img src="./assets/coin.png" alt="vector of a coin" class="mr-2">
+                        </figure>
+                        <p id="noakhali-current-amount" class="text-sm mr-1">0</p>
+                        <p class="text-sm">BDT</p>
+                    </div>
+                    <h2 class="card-title">Donate for <span id="noakhali-cause">Flood Relief in Noakhali,
+                            Bangladesh</span></h2>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
+                        donation will help provide essential supplies and to those affected by this disaster. Every
+                        contribution, big or small, makes difference. Please join us in supporting the relief efforts
+                        and making a positive impact on the lives of those in need.
+                    </p>
+                    <div class="card-actions flex flex-col">
+                        <input type="number" id="noakhali-donation-input"
+                            class="border-2 border-gray-200 rounded-md p-2 w-full" placeholder="Enter donation amount">
+                        <button id="noakhali-donate-btn" class="btn bg-lime w-full">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second card -->
+            <div class="card lg:card-side grid grid-cols-2 border-2 border-gray-200 p-8">
+                <figure>
+                    <img src="./assets/feni.png" alt="image of rescuers in Feni flood">
+                </figure>
+                <div class="card-body">
+                    <div class="flex items-center bg-gray-300 w-fit p-2 rounded-md">
+                        <figure>
+                            <img src="./assets/coin.png" alt="vector of a coin" class="mr-2">
+                        </figure>
+                        <p id="feni-current-amount" class="text-sm mr-1">0</p>
+                        <p class="text-sm">BDT</p>
+                    </div>
+                    <h2 class="card-title">Donate for <span id="feni-cause">Flood Relief in Feni, Bangladesh</span></h2>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        The recent floods in Feni have devastated local communities, leading to severe disruption and
+                        loss. Your generous donation will help provide immediate aid, including food, clean water, and
+                        medical supplies, to those affected by this calamity. Together, we can offer crucial support and
+                        help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a
+                        real difference. Please consider donating today to assist those in urgent need.
+                    </p>
+                    <div class="card-actions flex flex-col">
+                        <input type="number" id="feni-donation-input"
+                            class="border-2 border-gray-200 rounded-md p-2 w-full" placeholder="Enter donation amount">
+                        <button id="feni-donate-btn" class="btn bg-lime w-full">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third card -->
+            <div class="card lg:card-side grid grid-cols-2 border-2 border-gray-200 p-8">
+                <figure>
+                    <img src="./assets/quota-protest.png" alt="image of protesters in quota movement">
+                </figure>
+                <div class="card-body">
+                    <div class="flex items-center bg-gray-300 w-fit p-2 rounded-md">
+                        <figure>
+                            <img src="./assets/coin.png" alt="vector of a coin" class="mr-2">
+                        </figure>
+                        <p id="qouta-current-amount" class="text-sm mr-1">0</p>
+                        <p class="text-sm">BDT</p>
+                    </div>
+                    <h2 class="card-title">Aid for <span id="qouta-cause">Injured in the Quota Movement</span></h2>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        The recent Quota movement has resulted in numerous injuries and significant hardship for many
+                        individuals. Your support is crucial in providing medical assistance, rehabilitation, and
+                        necessary supplies to those affected. By contributing, you help ensure that injured individuals
+                        receive the care and support they need during this challenging time. Every donation plays a
+                        vital role in alleviating their suffering and aiding in their recovery. Please consider making a
+                        donation to support these brave individuals in their time of need.
+                    </p>
+                    <div class="card-actions flex flex-col">
+                        <input type="number" id="qouta-donation-input"
+                            class="border-2 border-gray-200 rounded-md p-2 w-full" placeholder="Enter donation amount">
+
+                        <button id="qouta-donate-btn" class="btn bg-lime w-full">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- modal -->
+            <div>
+                <dialog id="successful_donation_modal" class="modal">
+                    <div class="modal-box">
+                        <h3 class="text-4xl font-bold text-center mb-5">Congrats!</h3>
+                        <figure class="flex justify-center">
+                            <img src="./assets/coin.png" alt="vector of a coin" class="w-fit h-fit">
+                        </figure>
+                        <p class="py-4 text-center text-gray-500">You have donated for humankind</p>
+                        <p class="text-lg font-bold text-center">Successfully</p>
+                        <div class="modal-action flex justify-center">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close Confirmation</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+        </section>
+
+        <!-- history section -->
+        <section id="history" class="hidden w-11/12 max-w-screen-xl mx-auto">
+            <div id="history-list">
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-32 bg-orange-50">
+
+    </footer>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
