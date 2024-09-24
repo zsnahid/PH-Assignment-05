@@ -38,45 +38,96 @@
     <header class="bg-orange-50 bg-opacity-80 backdrop-blur sticky top-0 z-10">
         <section class="w-11/12 max-w-screen-xl mx-auto py-4">
             <!-- nav bar -->
-            <div class="navbar">
-                <div class="navbar-start">
+            <div class="navbar grid lg:grid-cols-3 gap-4">
+                <div class="order-2 lg:order-1">
                     <div class="dropdown">
-                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                            <a href="./blog.html" id="blog-btn" class="btn bg-lime hover:bg-lime-dark">Blog</a>
+                        <div tabindex="0" role="button">
+                            <a href="./blog.html" id="blog-btn" class="btn bg-lime hover:bg-lime-dark">
+                                Blog
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="navbar-center">
-                    <a class="btn btn-ghost text-xl">
-                        <span><img src="./assets/logo.png" alt="Logo of Donate Bangladesh"></span>
+                <div class="order-1 lg:order-2 lg:justify-self-center">
+                    <a class="flex items-center gap-2 font-bold text-xl">
+                        <span>
+                            <img src="./assets/logo.png" alt="Logo of Donate Bangladesh">
+                        </span>
                         Donate Bangladesh
                     </a>
                 </div>
-                <div class="navbar-end">
-                    <img src="./assets/coin.png" alt="vector of a coin" class="mr-3">
+                <div class="order-3 lg:justify-self-end">
+                    <figure>
+                        <img src="./assets/coin.png" alt="vector of a coin" class="mr-3">
+                    </figure>
                     <p id="current-balance" class="text-gray-600 font-semibold mr-1">11000</p>
                     <p class="text-gray-600 font-semibold">BDT</p>
                 </div>
             </div>
         </section>
 
+
     </header>
 
     <main class="mb-12 flex-grow">
-
+        <!-- <section class="w-11/12 max-w-screen-xl mx-auto py-4">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h7" />
+                            </svg>
+                        </div>
+                        <div tabindex="0"
+                            class="menu menu-sm  bg-base-100 rounded-box z-20 mt-3 w-52 p-2 shadow">
+                            <div>
+                                <a href="./blog.html" id="blog-btn" class="btn bg-lime hover:bg-lime-dark w-full">
+                                    Blog
+                                </a>
+                            </div>
+                            <div class="flex items-center">
+                                <figure>
+                                    <img src="./assets/coin.png" alt="vector of a coin" class="mr-3">
+                                </figure>
+                                <p id="current-balance" class="text-gray-600 font-semibold mr-1">11000</p>
+                                <p class="text-gray-600 font-semibold">BDT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-center">
+                    <a class="flex items-center gap-2 font-bold text-xl">
+                        <span>
+                            <img src="./assets/logo.png" alt="Logo of Donate Bangladesh">
+                        </span>
+                        Donate Bangladesh
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <figure>
+                        <img src="./assets/coin.png" alt="vector of a coin" class="mr-3">
+                    </figure>
+                    <p id="current-balance" class="text-gray-600 font-semibold mr-1">11000</p>
+                    <p class="text-gray-600 font-semibold">BDT</p>
+                </div>
+            </div>
+        </section> -->
         <!-- buttons under nav bar -->
-        <section class="bg-white bg-opacity-80 backdrop-blur text-center p-10 sticky top-24 z-10">
+        <section class="bg-white bg-opacity-80 backdrop-blur text-center p-10 sticky top-20 z-10">
             <button id="donation-btn" class="btn bg-lime mr-4 px-8 hover:bg-lime-dark">Donation</button>
             <button id="history-btn" class="btn px-8 hover:bg-lime-dark">History</button>
         </section>
         <!-- donation cards -->
         <section id="donation" class="w-11/12 max-w-screen-xl mx-auto space-y-10">
             <!-- first card -->
-            <div class="card lg:card-side grid grid-cols-2 border-2 border-gray-200 p-8">
-                <figure>
+            <div class="card lg:card-side grid lg:grid-cols-2 gap-8 border-2 border-gray-200 p-8">
+                <figure class="rounded-xl">
                     <img src="./assets/noakhali.png" alt="image of rescuers in Noakhali flood">
                 </figure>
-                <div class="card-body">
+                <div class="card-body p-0">
                     <div class="flex items-center bg-gray-300 w-fit p-2 rounded-md">
                         <figure>
                             <img src="./assets/coin.png" alt="vector of a coin" class="mr-2">
@@ -84,8 +135,10 @@
                         <p id="noakhali-current-amount" class="text-sm mr-1">0</p>
                         <p class="text-sm">BDT</p>
                     </div>
-                    <h2 class="card-title">Donate for <span id="noakhali-cause">Flood Relief in Noakhali,
-                            Bangladesh</span></h2>
+                    <h2 class="card-title">
+                        Donate for Flood Relief in Noakhali, Bangladesh
+                    </h2>
+                    <p id="noakhali-cause" class="hidden">Flood Relief in Noakhali, Bangladesh</p>
                     <p class="text-sm text-gray-500 leading-loose">
                         The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                         donation will help provide essential supplies and to those affected by this disaster. Every
@@ -101,11 +154,11 @@
             </div>
 
             <!-- second card -->
-            <div class="card lg:card-side grid grid-cols-2 border-2 border-gray-200 p-8">
-                <figure>
+            <div class="card lg:card-side grid lg:grid-cols-2 gap-8 border-2 border-gray-200 p-8">
+                <figure class="rounded-xl">
                     <img src="./assets/feni.png" alt="image of rescuers in Feni flood">
                 </figure>
-                <div class="card-body">
+                <div class="card-body p-0">
                     <div class="flex items-center bg-gray-300 w-fit p-2 rounded-md">
                         <figure>
                             <img src="./assets/coin.png" alt="vector of a coin" class="mr-2">
@@ -113,7 +166,10 @@
                         <p id="feni-current-amount" class="text-sm mr-1">0</p>
                         <p class="text-sm">BDT</p>
                     </div>
-                    <h2 class="card-title">Donate for <span id="feni-cause">Flood Relief in Feni, Bangladesh</span></h2>
+                    <h2 class="card-title">
+                        Donate for Flood Relief in Feni, Bangladesh
+                    </h2>
+                    <p id="feni-cause" class="hidden">Flood Relief in Feni, Bangladesh</p>
                     <p class="text-sm text-gray-500 leading-loose">
                         The recent floods in Feni have devastated local communities, leading to severe disruption and
                         loss. Your generous donation will help provide immediate aid, including food, clean water, and
@@ -130,11 +186,11 @@
             </div>
 
             <!-- third card -->
-            <div class="card lg:card-side grid grid-cols-2 border-2 border-gray-200 p-8">
-                <figure>
+            <div class="card lg:card-side grid lg:grid-cols-2 gap-8 border-2 border-gray-200 p-8">
+                <figure class="rounded-xl">
                     <img src="./assets/quota-protest.png" alt="image of protesters in quota movement">
                 </figure>
-                <div class="card-body">
+                <div class="card-body p-0">
                     <div class="flex items-center bg-gray-300 w-fit p-2 rounded-md">
                         <figure>
                             <img src="./assets/coin.png" alt="vector of a coin" class="mr-2">
@@ -142,7 +198,10 @@
                         <p id="qouta-current-amount" class="text-sm mr-1">0</p>
                         <p class="text-sm">BDT</p>
                     </div>
-                    <h2 class="card-title">Aid for <span id="qouta-cause">Injured in the Quota Movement</span></h2>
+                    <h2 class="card-title">
+                        Aid for Injured in the Quota Movement
+                    </h2>
+                    <p id="qouta-cause" class="hidden">Injured in the Quota Movement</p>
                     <p class="text-sm text-gray-500 leading-loose">
                         The recent Quota movement has resulted in numerous injuries and significant hardship for many
                         individuals. Your support is crucial in providing medical assistance, rehabilitation, and
@@ -188,7 +247,7 @@
         </section>
     </main>
 
-    <footer class="h-32 bg-orange-50">
+    <footer class="h-16 lg:h-32 bg-orange-50">
 
     </footer>
     <script src="./js/utilities.js"></script>
